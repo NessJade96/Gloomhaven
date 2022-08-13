@@ -10,13 +10,13 @@ addCharacterPlus.addEventListener("click", function () {
     >`;
 
 	figures.appendChild(newFigure);
-	sortInitiative();
 });
 
-const sortInitiative = () => {
-	const initiative = document.querySelectorAll(".initiative");
-	console.log(
-		"🚀 ~ file: index.js ~ line 16 ~ initiative",
-		initiative.values
-	);
-};
+// sortInitiative();
+// const sortInitiative = () => {
+// 	const initiative = document.querySelectorAll(".initiative");
+// 	console.log(
+// 		"🚀 ~ file: index.js ~ line 16 ~ initiative",
+// 		initiative.values
+// 	);
+// };
