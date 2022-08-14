@@ -15,16 +15,16 @@
 	</head>
 	<body class="bg-red-100">
 		<header
-			class="font-semibold text-2xl text-center py-4 border-2 bg-teal-500"
+			class="py-4 text-2xl font-semibold text-center bg-teal-500 border-2"
 			>CrimpSquad</header
 		>
-		<article class="text-center text-2xl flex flex-col items-center">
+		<article class="flex flex-col items-center text-2xl text-center">
 			<div class="figures"></div>
 
-			<button type=" button" class="addCharacter my-3">
+			<button type="button" class="my-3 addCharacter">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="h-10 w-10"
+					class="w-10 h-10"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -37,7 +37,12 @@
 					/>
 				</svg>
 			</button>
+			<button id="sort" type="button" class="w-full p-4 bg-red-800"
+				>Sort</button
+			>
 		</article>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 		<script src="index.js"></script>
 	</body>
 </html>
