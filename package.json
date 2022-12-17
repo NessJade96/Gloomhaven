@@ -2,7 +2,7 @@
 	"name": "gloomhaven",
 	"private": true,
 	"version": "0.0.0",
-	"homepage": "https://nessjade96.github.io/Gloomhaven/Gloomhaven/",
+	"homepage": "https://nessjade96.github.io/Gloomhaven/",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
