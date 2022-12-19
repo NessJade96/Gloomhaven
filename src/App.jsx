@@ -36,9 +36,13 @@ export default function App() {
 
 	function removeFigure(id) {
 		if (confirm(`Are you sure?`)) {
-			setFigures(figures.filter((figure) => figure.id !== id));
+			const newFigures = figures.filter((figure) => figure.id !== id);
+			setFigures(newFigures);
+			window.localStorage.setItem(
+				LOCAL_STORAGE_KEY,
+				JSON.stringify(newFigures)
+			);
 		}
-		console.log(figures);
 	}
 
 	function onNameChange(id, newName) {
