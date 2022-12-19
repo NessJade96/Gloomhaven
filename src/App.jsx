@@ -16,7 +16,13 @@ export default function App() {
 	});
 
 	function onSort() {
-		location.reload();
+		const getFigures = JSON.parse(
+			window.localStorage.getItem(LOCAL_STORAGE_KEY)
+		);
+		const figuresSortedByInit = getFigures?.sort(
+			(a, b) => a.initiative - b.initiative
+		);
+		setFigures(figuresSortedByInit);
 	}
 
 	function addFigure() {
@@ -29,7 +35,10 @@ export default function App() {
 	}
 
 	function removeFigure(id) {
-		setFigures(figures.filter((figure) => figure.id !== id));
+		if (confirm(`Are you sure?`)) {
+			setFigures(figures.filter((figure) => figure.id !== id));
+		}
+		console.log(figures);
 	}
 
 	function onNameChange(id, newName) {
@@ -69,14 +78,6 @@ export default function App() {
 		<>
 			<Header></Header>
 			<article className="flex flex-col items-center text-2xl text-center">
-				<button
-					onClick={addFigure}
-					type="button"
-					className="p-2 my-2 addCharacter bg-amber-600 border-amber-700"
-				>
-					Add a figure
-				</button>
-
 				<div className="figures">
 					<ul>
 						{figures.map((figure) => (
@@ -91,7 +92,18 @@ export default function App() {
 						))}
 					</ul>
 				</div>
-				<button className="p-4 mt-10 bg-yellow-500 w-full" onClick={onSort}>
+				<button
+					onClick={addFigure}
+					type="button"
+					className="p-2 my-2 addCharacter bg-amber-600 border-amber-700"
+				>
+					Add a figure
+				</button>
+				<button
+					type="button"
+					className="p-4 mt-10 bg-yellow-500 w-full"
+					onClick={onSort}
+				>
 					Sort
 				</button>
 				<button className="p-4 mt-10 bg-yellow-500" onClick={clearAllFigures}>
